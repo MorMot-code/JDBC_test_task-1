@@ -1,12 +1,15 @@
 package jm.task.core.jdbc.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Table
+import static jm.task.core.jdbc.dao.UserDaoJDBCImpl.TABLE_NAME;
+
+
+@Entity
+@Table(name = TABLE_NAME)
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
@@ -59,4 +62,16 @@ public class User {
     public void setAge(Byte age) {
         this.age = age;
     }
+
+
+    @Override
+    public String toString() {
+        return "Пользователь { " +
+                "id = " + id +
+                ", имя = «" + name + "»" +
+                ", фамилия = «" + lastName + "»" +
+                ", возраст = " + age +
+                " }\n";
+    }
+
 }
