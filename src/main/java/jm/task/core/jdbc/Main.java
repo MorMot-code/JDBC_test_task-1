@@ -6,8 +6,6 @@ import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
 import jm.task.core.jdbc.model.User;
 import jm.task.core.jdbc.util.Util;
 
-import java.sql.*;
-
 public class Main {
     public static void main(String[] args) {
         // реализуйте алгоритм здесь
@@ -17,11 +15,10 @@ public class Main {
         User user_3 = new User("Лена", "Головач", (byte) 18);
         User user_4 = new User("Стоша", "Говнозад", (byte) 99);
 
-        Util.testConnection();
-
-        DaoJDBC_process(user_1, user_2, user_3, user_4);
-        Hibernate_process(user_1, user_2, user_3, user_4);
-
+        if (Util.testConnection()) {
+            DaoJDBC_process(user_1, user_2, user_3, user_4);
+            Hibernate_process(user_1, user_2, user_3, user_4);
+        }
 
     }
 

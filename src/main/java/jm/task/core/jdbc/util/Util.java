@@ -19,13 +19,14 @@ public class Util {
     private static Connection connection;
 
 
-    public static void testConnection() {
+    public static boolean testConnection() {
 
         try (Connection conn = DriverManager.getConnection(DB_URL, DB_USERNAME, DB_PASSWORD)) {
             System.out.println("Поздравляю, ты взломал Пентагон!");
+            return true;
         } catch (SQLException e) {
             System.out.println("Даже чукотские хакеры взломали счёты… а ты НЕТ");
-            e.printStackTrace();
+            return false;
         }
     }
 
