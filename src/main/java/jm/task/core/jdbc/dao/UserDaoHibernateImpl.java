@@ -10,7 +10,8 @@ import org.hibernate.Transaction;
 import java.sql.*;
 import java.util.List;
 
-import static jm.task.core.jdbc.dao.UserDaoJDBCImpl.TABLE_NAME;
+import static jm.task.core.jdbc.util.Util.TABLE_NAME;
+
 
 public class UserDaoHibernateImpl implements UserDao {
     public UserDaoHibernateImpl() {

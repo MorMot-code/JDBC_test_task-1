@@ -14,6 +14,8 @@ public class Util {
     final static String DB_URL = "jdbc:postgresql://localhost:8080/TEST";
     final private static String DB_USERNAME = "postgres";
     final private static String DB_PASSWORD = "asdqwe";
+
+    public final static String TABLE_NAME = "People";
     private static Connection connection;
 
 

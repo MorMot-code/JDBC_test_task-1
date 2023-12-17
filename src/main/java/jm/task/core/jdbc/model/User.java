@@ -2,7 +2,7 @@ package jm.task.core.jdbc.model;
 
 import javax.persistence.*;
 
-import static jm.task.core.jdbc.dao.UserDaoJDBCImpl.TABLE_NAME;
+import static jm.task.core.jdbc.util.Util.TABLE_NAME;
 
 
 @Entity
@@ -66,12 +66,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "Пользователь { " +
+        return "\nПользователь { " +
                 "id = " + id +
                 ", имя = «" + name + "»" +
                 ", фамилия = «" + lastName + "»" +
                 ", возраст = " + age +
-                " }\n";
+                " }";
     }
 
 }
